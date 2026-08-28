@@ -1,0 +1,73 @@
+# config/config.yaml
+# All retrieval parameters, chunk parameters, and model identifiers are
+# externalized here (NFR-04). Nothing below is hard-coded inline in src/.
+
+corpus:
+  path: "data/corpus"
+  doc_glob: "*.md"
+
+chunking:
+  # Strategy: clause-aware recursive splitting. Rationale documented in
+  # docs/embedding-selection.md section "Chunking Strategy Rationale".
+  strategy: "clause_recursive"
+  max_chars: 900
+  overlap_chars: 150
+  min_chars: 120
+  sentence_window: 1          # sentences of surrounding context attached to each chunk
+
+embedding:
+  provider: "sentence-transformers"
+  model_name: "BAAI/bge-small-en-v1.5"
+  dimensions: 384
+  normalize: true
+
+vector_store:
+  backend: "chroma"           # "chroma" or "faiss"
+  persist_dir: "data/vector_store/chroma"
+  collection_name: "hospital_policy_sop"
+
+lexical:
+  backend: "rank_bm25"
+  tokenizer: "simple_lowercase"
+
+fusion:
+  method: "rrf"                # Reciprocal Rank Fusion
+  rrf_k: 60
+  candidate_pool_per_retriever: 20
+
+reranker:
+  model_name: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  top_k_in: 20                # candidates fed into the reranker
+  top_k_out: 5                 # final top-K passed to the generator
+
+retrieval:
+  top_k: 5
+  score_threshold: 0.15        # normalized reranker score floor used for abstention (AC-05)
+
+query_transformation:
+  enabled: true
+  mode: "auto"                 # rewrite | expand | decompose | auto
+  max_sub_queries: 3
+
+generation:
+  llm_provider: "google_gemini"
+  model_primary: "gemini-3.5-flash"
+  model_challenger: "gemini-3.5-flash-lite"
+  temperature: 0.0
+  max_output_tokens: 1024
+  retries: 3
+  retry_backoff_seconds: 2
+
+abstention:
+  min_reranker_score: 0.15
+  min_citations_required: 1
+
+evaluation:
+  golden_set_path: "eval/golden_set.json"
+  ragas_report_dir: "eval/reports"
+  judge_model: "gemini-3.5-flash"
+
+logging:
+  level: "INFO"
+  log_path: "logs/app.log"
+  redact_pii: true

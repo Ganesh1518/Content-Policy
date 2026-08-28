@@ -1,0 +1,188 @@
+{
+  "version": "1.0",
+  "description": "Golden evaluation set for AAIE_011_HLC Hospital Policy & SOP Assistant. References AC-08/AC-09/AC-10. 20 answerable questions + 2 deliberate out-of-scope questions to test the abstention path (AC-05).",
+  "items": [
+    {
+      "id": "G-01",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "How long must alcohol-based hand rub be applied for during routine hand hygiene?",
+      "reference_answer": "Alcohol-based hand rub (ABHR) must be applied for a minimum of 20 seconds, covering all hand surfaces.",
+      "expected_context": [{"doc_id": "POL-IC-001", "clause_id": "3.3"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-02",
+      "ac_ref": ["AC-02", "AC-06", "AC-08"],
+      "question": "What is the correct PPE doffing sequence and where must it occur?",
+      "reference_answer": "Doff in this order: gloves, hand hygiene, gown, hand hygiene, eye protection, respirator, hand hygiene. Doffing must occur at the anteroom, not inside the patient room, except for the respirator.",
+      "expected_context": [{"doc_id": "SOP-IC-002", "clause_id": "4.3"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-03",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "What negative-pressure and respirator requirements apply under Airborne Precautions?",
+      "reference_answer": "Airborne Precautions require a negative-pressure room and a fit-tested N95/FFP2 respirator for all entrants.",
+      "expected_context": [{"doc_id": "SOP-IC-003", "clause_id": "2.4"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-04",
+      "ac_ref": ["AC-02", "AC-06", "AC-08"],
+      "question": "Within what timeframe must a PPE breach be reported, and to whom?",
+      "reference_answer": "A suspected PPE breach must be reported to the Infection Control Officer within 1 hour via the incident-reporting system.",
+      "expected_context": [{"doc_id": "SOP-IC-002", "clause_id": "4.5"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-05",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "How many linked infection cases trigger automatic escalation to the Hospital Safety Committee?",
+      "reference_answer": "A suspected cluster of three or more linked cases escalates automatically to the Hospital Safety Committee.",
+      "expected_context": [{"doc_id": "COMP-005", "clause_id": "6.2"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-06",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "What two identifiers must be verified before medication administration?",
+      "reference_answer": "Staff must verify at least two identifiers: full name and date of birth. Room number is not acceptable.",
+      "expected_context": [{"doc_id": "SOP-PS-101", "clause_id": "2.1"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-07",
+      "ac_ref": ["AC-02", "AC-06", "AC-08"],
+      "question": "What must a nurse do immediately after a patient fall, in order?",
+      "reference_answer": "Assess for injury, notify the attending physician, complete an incident report within 1 hour, and reassess fall risk before leaving the patient unattended again.",
+      "expected_context": [{"doc_id": "SOP-PS-102", "clause_id": "3.4"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-08",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "Which medications require an independent double-check by a second nurse?",
+      "reference_answer": "High-alert medications such as insulin, anticoagulants, and opioids require independent double-check by a second licensed nurse before administration.",
+      "expected_context": [{"doc_id": "SOP-PS-103", "clause_id": "4.2"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-09",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "Who is responsible for leading the surgical time-out checklist?",
+      "reference_answer": "The circulating nurse leads the verbal time-out checklist; the surgeon must verbally confirm each item before the first incision.",
+      "expected_context": [{"doc_id": "SOP-PS-104", "clause_id": "2.3"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-10",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "How quickly must the laboratory notify a clinician of a critical lab value?",
+      "reference_answer": "The laboratory must notify the ordering clinician or covering nurse within 30 minutes of a critical value being verified.",
+      "expected_context": [{"doc_id": "SOP-PS-105", "clause_id": "3.2"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-11",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "What elements must be documented for informed surgical consent?",
+      "reference_answer": "Consent must document the diagnosis, the proposed procedure, material risks and benefits, reasonable alternatives, and the consequences of declining treatment.",
+      "expected_context": [{"doc_id": "SOP-CON-201", "clause_id": "2.1"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-12",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "Who may obtain consent for an incapacitated adult with no healthcare proxy or spouse available?",
+      "reference_answer": "Consent follows the order: healthcare proxy, then spouse, then adult child, then parent.",
+      "expected_context": [{"doc_id": "SOP-CON-202", "clause_id": "3.2"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-13",
+      "ac_ref": ["AC-02", "AC-06", "AC-08"],
+      "question": "What happens when a patient refuses blood products on religious grounds?",
+      "reference_answer": "A documented refusal must trigger a bloodless-medicine care-plan consult per the compliance manual, requested within 4 hours.",
+      "expected_context": [
+        {"doc_id": "SOP-CON-203", "clause_id": "2.3"},
+        {"doc_id": "COMP-005", "clause_id": "4.3"}
+      ],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-14",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "Under what condition can treatment proceed without prior consent?",
+      "reference_answer": "When a patient faces an immediate, life-threatening emergency, cannot consent, and no legally authorized representative is immediately available, treatment necessary to prevent death or serious harm may proceed without prior consent.",
+      "expected_context": [{"doc_id": "POL-CON-204", "clause_id": "2.1"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-15",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "Within what time must a suspected PHI breach be reported to the Compliance Officer?",
+      "reference_answer": "A suspected PHI breach must be reported to the Compliance Officer within 1 hour of discovery.",
+      "expected_context": [{"doc_id": "COMP-006", "clause_id": "2.2"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-16",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "What is required before withdrawing a controlled substance from the dispensing cabinet?",
+      "reference_answer": "Controlled substances must be stored in a locked automated dispensing cabinet requiring two-factor identification for withdrawal.",
+      "expected_context": [{"doc_id": "COMP-007", "clause_id": "3.1"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-17",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "What is the minimum nurse-to-patient ratio in the intensive care unit?",
+      "reference_answer": "The minimum ratio in the intensive care unit is 1:2.",
+      "expected_context": [{"doc_id": "SOP-OPS-303", "clause_id": "2.1"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-18",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "How soon must the resuscitation team arrive at the bedside after a Code Blue is activated?",
+      "reference_answer": "The designated resuscitation team must arrive at the bedside within 3 minutes of activation, facility-wide.",
+      "expected_context": [{"doc_id": "SOP-OPS-306", "clause_id": "2.2"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-19",
+      "ac_ref": ["AC-02", "AC-08"],
+      "question": "What must staff do immediately after a sharps injury?",
+      "reference_answer": "Wash the injury site with soap and water immediately and report to Occupational Health within 1 hour.",
+      "expected_context": [{"doc_id": "SOP-OPS-308", "clause_id": "2.1"}],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-20",
+      "ac_ref": ["AC-02", "AC-06", "AC-07", "AC-08"],
+      "question": "What is the hand-hygiene protocol before a procedure, and who audits compliance with it?",
+      "reference_answer": "Before an invasive or aseptic procedure, staff must perform surgical hand antisepsis with a chlorhexidine-based scrub for at least 2 minutes, followed immediately by ABHR before glove donning. Compliance is audited monthly by the Infection Control Officer.",
+      "expected_context": [
+        {"doc_id": "POL-IC-001", "clause_id": "3.4"},
+        {"doc_id": "POL-IC-001", "clause_id": "3.5"}
+      ],
+      "expect_abstain": false
+    },
+    {
+      "id": "G-21",
+      "ac_ref": ["AC-05", "AC-08"],
+      "question": "What is the hospital's approved dosage range for intravenous vancomycin in pediatric patients?",
+      "reference_answer": "The corpus does not contain vancomycin dosing information; the assistant should abstain rather than fabricate a dosage.",
+      "expected_context": [],
+      "expect_abstain": true
+    },
+    {
+      "id": "G-22",
+      "ac_ref": ["AC-05", "AC-08"],
+      "question": "Which parking garage is closest to the main hospital entrance?",
+      "reference_answer": "The corpus does not cover facilities/parking information; the assistant should abstain as out of scope.",
+      "expected_context": [],
+      "expect_abstain": true
+    }
+  ]
+}
